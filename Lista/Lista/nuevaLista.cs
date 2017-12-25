@@ -16,5 +16,10 @@ namespace Lista
         {
             InitializeComponent();
         }
+
+        private void nuevaLista_Load(object sender, EventArgs e)
+        {
+            StartPosition = FormStartPosition.CenterScreen;
+        }
     }
 }

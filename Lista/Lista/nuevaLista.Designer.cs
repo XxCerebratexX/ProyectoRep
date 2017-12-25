@@ -109,6 +109,7 @@
             this.Controls.Add(this.label1);
             this.Name = "nuevaLista";
             this.Text = "Nueva Lista";
+            this.Load += new System.EventHandler(this.nuevaLista_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

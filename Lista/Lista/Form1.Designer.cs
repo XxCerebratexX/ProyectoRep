@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Inicio = new System.Windows.Forms.Button();
+            this.Listas = new System.Windows.Forms.Button();
+            this.Videos = new System.Windows.Forms.Button();
+            this.Usuarios = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Quitar = new System.Windows.Forms.Button();
@@ -49,42 +49,42 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // Inicio
             // 
-            this.button1.Location = new System.Drawing.Point(0, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Inicio";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Inicio.Location = new System.Drawing.Point(0, 12);
+            this.Inicio.Name = "Inicio";
+            this.Inicio.Size = new System.Drawing.Size(75, 23);
+            this.Inicio.TabIndex = 0;
+            this.Inicio.Text = "Inicio";
+            this.Inicio.UseVisualStyleBackColor = true;
+            this.Inicio.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // Listas
             // 
-            this.button2.Location = new System.Drawing.Point(0, 41);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Listas";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Listas.Location = new System.Drawing.Point(0, 41);
+            this.Listas.Name = "Listas";
+            this.Listas.Size = new System.Drawing.Size(75, 23);
+            this.Listas.TabIndex = 1;
+            this.Listas.Text = "Listas";
+            this.Listas.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // Videos
             // 
-            this.button3.Location = new System.Drawing.Point(0, 70);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Videos";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Videos.Location = new System.Drawing.Point(0, 70);
+            this.Videos.Name = "Videos";
+            this.Videos.Size = new System.Drawing.Size(75, 23);
+            this.Videos.TabIndex = 2;
+            this.Videos.Text = "Videos";
+            this.Videos.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // Usuarios
             // 
-            this.button4.Location = new System.Drawing.Point(0, 99);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Usuarios";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Usuarios.Location = new System.Drawing.Point(0, 99);
+            this.Usuarios.Name = "Usuarios";
+            this.Usuarios.Size = new System.Drawing.Size(75, 23);
+            this.Usuarios.TabIndex = 3;
+            this.Usuarios.Text = "Usuarios";
+            this.Usuarios.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -191,6 +191,7 @@
             // 
             // nuevaLista
             // 
+            this.nuevaLista.FlatAppearance.BorderSize = 2;
             this.nuevaLista.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.nuevaLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevaLista.Location = new System.Drawing.Point(38, 13);
@@ -199,9 +200,11 @@
             this.nuevaLista.TabIndex = 2;
             this.nuevaLista.Text = "+";
             this.nuevaLista.UseVisualStyleBackColor = true;
+            this.nuevaLista.Click += new System.EventHandler(this.button1_Click);
             // 
             // nuevoVideo
             // 
+            this.nuevoVideo.FlatAppearance.BorderSize = 2;
             this.nuevoVideo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevoVideo.Location = new System.Drawing.Point(34, 22);
             this.nuevoVideo.Name = "nuevoVideo";
@@ -209,6 +212,7 @@
             this.nuevoVideo.TabIndex = 3;
             this.nuevoVideo.Text = "+";
             this.nuevoVideo.UseVisualStyleBackColor = true;
+            this.nuevoVideo.Click += new System.EventHandler(this.nuevoVideo_Click);
             // 
             // listasVentana
             // 
@@ -216,12 +220,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 480);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Usuarios);
+            this.Controls.Add(this.Videos);
+            this.Controls.Add(this.Listas);
+            this.Controls.Add(this.Inicio);
             this.Name = "listasVentana";
             this.Text = "Listas";
+            this.Load += new System.EventHandler(this.listasVentana_Load);
             this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -231,10 +236,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Inicio;
+        private System.Windows.Forms.Button Listas;
+        private System.Windows.Forms.Button Videos;
+        private System.Windows.Forms.Button Usuarios;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button Quitar;

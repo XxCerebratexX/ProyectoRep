@@ -1,0 +1,10 @@
+C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\obj\Debug\Lista.csprojResolveAssemblyReference.cache
+C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\obj\Debug\Lista.listasVentana.resources
+C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\obj\Debug\Lista.nuevaLista.resources
+C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\obj\Debug\Lista.Properties.Resources.resources
+C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\obj\Debug\Lista.csproj.GenerateResource.Cache
+C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\bin\Debug\Lista.exe.config
+C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\bin\Debug\Lista.exe
+C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\bin\Debug\Lista.pdb
+C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\obj\Debug\Lista.exe
+C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\obj\Debug\Lista.pdb

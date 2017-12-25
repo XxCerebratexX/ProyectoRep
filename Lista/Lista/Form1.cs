@@ -19,10 +19,21 @@ namespace Lista
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            nuevaLista op = new nuevaLista();
+            op.Show();
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listasVentana_Load(object sender, EventArgs e)
+        {
+            StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void nuevoVideo_Click(object sender, EventArgs e)
         {
 
         }
