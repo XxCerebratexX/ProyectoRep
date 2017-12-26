@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Lista
 {
@@ -35,8 +36,9 @@ namespace Lista
 
         private void nuevoVideo_Click(object sender, EventArgs e)
         {
-            Nuevo_Video op = new Nuevo_Video();
+            Nuevo_Video_Lista op = new Nuevo_Video_Lista();
             op.Show();
         }
     }
+
 }

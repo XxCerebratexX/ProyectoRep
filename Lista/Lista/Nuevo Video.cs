@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Lista
 {
-    public partial class Nuevo_Video : Form
+    public partial class Nuevo_Video_Lista : Form
     {
-        public Nuevo_Video()
+        public Nuevo_Video_Lista()
         {
             InitializeComponent();
         }
