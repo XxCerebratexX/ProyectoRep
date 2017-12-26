@@ -35,7 +35,8 @@ namespace Lista
 
         private void nuevoVideo_Click(object sender, EventArgs e)
         {
-
+            Nuevo_Video op = new Nuevo_Video();
+            op.Show();
         }
     }
 }
