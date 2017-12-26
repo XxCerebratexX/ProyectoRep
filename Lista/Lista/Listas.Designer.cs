@@ -34,16 +34,16 @@
             this.Usuarios = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.nuevoVideo = new System.Windows.Forms.Button();
             this.Quitar = new System.Windows.Forms.Button();
             this.Bajar = new System.Windows.Forms.Button();
             this.Subir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.nuevaLista = new System.Windows.Forms.Button();
             this.ModificarLista = new System.Windows.Forms.Button();
             this.EliminarLista = new System.Windows.Forms.Button();
             this.videosLista = new System.Windows.Forms.ListBox();
             this.Lista = new System.Windows.Forms.ListBox();
-            this.nuevaLista = new System.Windows.Forms.Button();
-            this.nuevoVideo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -111,6 +111,18 @@
             this.panel2.Size = new System.Drawing.Size(100, 143);
             this.panel2.TabIndex = 3;
             // 
+            // nuevoVideo
+            // 
+            this.nuevoVideo.FlatAppearance.BorderSize = 2;
+            this.nuevoVideo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nuevoVideo.Location = new System.Drawing.Point(34, 22);
+            this.nuevoVideo.Name = "nuevoVideo";
+            this.nuevoVideo.Size = new System.Drawing.Size(23, 23);
+            this.nuevoVideo.TabIndex = 3;
+            this.nuevoVideo.Text = "+";
+            this.nuevoVideo.UseVisualStyleBackColor = true;
+            this.nuevoVideo.Click += new System.EventHandler(this.nuevoVideo_Click);
+            // 
             // Quitar
             // 
             this.Quitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -151,6 +163,19 @@
             this.panel1.Size = new System.Drawing.Size(99, 143);
             this.panel1.TabIndex = 2;
             // 
+            // nuevaLista
+            // 
+            this.nuevaLista.FlatAppearance.BorderSize = 2;
+            this.nuevaLista.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.nuevaLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nuevaLista.Location = new System.Drawing.Point(38, 13);
+            this.nuevaLista.Name = "nuevaLista";
+            this.nuevaLista.Size = new System.Drawing.Size(24, 24);
+            this.nuevaLista.TabIndex = 2;
+            this.nuevaLista.Text = "+";
+            this.nuevaLista.UseVisualStyleBackColor = true;
+            this.nuevaLista.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ModificarLista
             // 
             this.ModificarLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -188,31 +213,7 @@
             this.Lista.Name = "Lista";
             this.Lista.Size = new System.Drawing.Size(146, 144);
             this.Lista.TabIndex = 0;
-            // 
-            // nuevaLista
-            // 
-            this.nuevaLista.FlatAppearance.BorderSize = 2;
-            this.nuevaLista.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.nuevaLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nuevaLista.Location = new System.Drawing.Point(38, 13);
-            this.nuevaLista.Name = "nuevaLista";
-            this.nuevaLista.Size = new System.Drawing.Size(24, 24);
-            this.nuevaLista.TabIndex = 2;
-            this.nuevaLista.Text = "+";
-            this.nuevaLista.UseVisualStyleBackColor = true;
-            this.nuevaLista.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // nuevoVideo
-            // 
-            this.nuevoVideo.FlatAppearance.BorderSize = 2;
-            this.nuevoVideo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nuevoVideo.Location = new System.Drawing.Point(34, 22);
-            this.nuevoVideo.Name = "nuevoVideo";
-            this.nuevoVideo.Size = new System.Drawing.Size(23, 23);
-            this.nuevoVideo.TabIndex = 3;
-            this.nuevoVideo.Text = "+";
-            this.nuevoVideo.UseVisualStyleBackColor = true;
-            this.nuevoVideo.Click += new System.EventHandler(this.nuevoVideo_Click);
+            this.Lista.SelectedIndexChanged += new System.EventHandler(this.Lista_SelectedIndexChanged);
             // 
             // listasVentana
             // 
