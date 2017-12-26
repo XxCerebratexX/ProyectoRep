@@ -13,11 +13,36 @@ namespace Lista
 {
     public partial class listasVentana : Form
     {
-        private DBConnect con = new DBConnect();
+
 
         public listasVentana()
         {
             InitializeComponent();
+            fill_List();
+        }
+
+        void fill_List()
+        {
+            String StrConn = "datasource=localhost;port=3306;username=root;password=ElGuajolot3;database=bdrep";
+            String Query = "SELECT * FROM lista;";
+            MySqlConnection conDb = new MySqlConnection(StrConn);
+            MySqlCommand cmdDB = new MySqlCommand(Query, conDb);
+            MySqlDataReader Reader;
+            try
+            {
+                conDb.Open();
+                Reader = cmdDB.ExecuteReader();
+
+                while (Reader.Read())
+                {
+                    string sName = Reader.GetString("Nombre");
+                    Lista.Items.Add(sName);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR!");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,48 +69,42 @@ namespace Lista
 
         private void Lista_SelectedIndexChanged(object sender, EventArgs e)
         {
-            con = new DBConnect();
-            List<string>[] Select()
+            String StrConn = "datasource=localhost;port=3306;username=root;password=ElGuajolot3;database=bdrep";
+            ;
+            String Query2 = "SELECT videos.Nombre AS NombreV, lista.Nombre AS NombreL FROM (videoslista INNER JOIN videos ON" +
+            " videoslista.idVideos = videos.idVideos INNER JOIN lista ON videoslista.idLista = lista.idLista)" +
+            " WHERE videoslista.idLista =(SELECT idLista FROM lista WHERE Nombre='" + Lista.Text + "');";
+            MySqlConnection conDb = new MySqlConnection(StrConn);
+            //MySqlCommand Command = new MySqlCommand(Query1, conDb);
+            MySqlCommand cmdDB = new MySqlCommand(Query2, conDb);
+            MySqlDataReader Reader;
+            MySqlDataReader Reader1;
+            try
             {
-                string query = "SELECT * FROM tableinfo";
-
-                //Create a list to store the result
-                List<string>[] list = new List<string>[3];
-                list[0] = new List<string>();
-                list[1] = new List<string>();
-                list[2] = new List<string>();
-
-                //Open connection
-                if (con.OpenConnection() == true)
+                conDb.Open();
+                //Reader1 = Command.ExecuteReader();
+                Reader = cmdDB.ExecuteReader();
+                String sName1 = "";
+                videosLista.Items.Clear();
+                while (Reader.Read())
                 {
-                    //Create Command
-                    MySqlCommand cmd = new MySqlCommand(query, connection);
-                    //Create a data reader and Execute the command
-                    MySqlDataReader dataReader = cmd.ExecuteReader();
-
-                    //Read the data and store them in the list
-                    while (dataReader.Read())
-                    {
-                        list[0].Add(dataReader["id"] + "");
-                        list[1].Add(dataReader["name"] + "");
-                        list[2].Add(dataReader["age"] + "");
-                    }
-
-                    //close Data Reader
-                    dataReader.Close();
-
-                    //close Connection
-                    this.CloseConnection();
-
-                    //return list to be displayed
-                    return list;
-                }
-                else
-                {
-                    return list;
+                    sName1 = Reader.GetString("NombreV");
+                    //string sName2 = Reader.GetString("NombreL");
+                    videosLista.Items.Add(sName1);
+                    //videosLista.Items.Add(sName2);
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+        }
+
+        private void inicio_Click(object sender, EventArgs e)
+        {
+
         }
     }
-
 }
+
