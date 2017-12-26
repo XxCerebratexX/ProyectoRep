@@ -69,7 +69,35 @@ namespace Lista
 
         private void Lista_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            String StrConn = "datasource=localhost;port=3306;username=root;password=ElGuajolot3;database=bdrep";
+            ;
+            String Query2 = "SELECT videos.Nombre AS NombreV, lista.Nombre AS NombreL FROM (videoslista INNER JOIN videos ON"+ 
+            " videoslista.idVideos = videos.idVideos INNER JOIN lista ON videoslista.idLista = lista.idLista)"+
+            " WHERE videoslista.idLista =(SELECT idLista FROM lista WHERE Nombre='" + Lista.Text + "');";
+            MySqlConnection conDb = new MySqlConnection(StrConn);
+            //MySqlCommand Command = new MySqlCommand(Query1, conDb);
+            MySqlCommand cmdDB = new MySqlCommand(Query2, conDb);
+            MySqlDataReader Reader;
+            MySqlDataReader Reader1;
+            try
+            {
+                conDb.Open();
+                //Reader1 = Command.ExecuteReader();
+                Reader = cmdDB.ExecuteReader();
+                String sName1 = "";
+                while (Reader.Read())
+                {
+                    sName1 = Reader.GetString("NombreV");
+                    //string sName2 = Reader.GetString("NombreL");
+                    videosLista.Items.Add(sName1);
+                    //videosLista.Items.Add(sName2);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                
+            }
         }
 
         private void inicio_Click(object sender, EventArgs e)
