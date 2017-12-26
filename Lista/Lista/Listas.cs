@@ -85,6 +85,7 @@ namespace Lista
                 //Reader1 = Command.ExecuteReader();
                 Reader = cmdDB.ExecuteReader();
                 String sName1 = "";
+                videosLista.Items.Clear();
                 while (Reader.Read())
                 {
                     sName1 = Reader.GetString("NombreV");
