@@ -13,14 +13,36 @@ namespace Lista
 {
     public partial class listasVentana : Form
     {
-        private DBConnect con = new DBConnect();
-        public String Connection = "Server=localhost;Database=BDRep;Uid=root;Pwd=ElGuajolot3;";
-        MySqlCommand cmd;
-        private DataGridView dataGridView1 = new DataGridView();
-
+        
+        
         public listasVentana()
         {
             InitializeComponent();
+            fill_List();
+        }
+
+        void fill_List()
+        {
+            String StrConn = "datasource=localhost;port=3306;username=root;password=ElGuajolot3;database=bdrep";
+            String Query = "SELECT * FROM lista;";
+            MySqlConnection conDb = new MySqlConnection(StrConn);
+            MySqlCommand cmdDB = new MySqlCommand(Query,conDb);
+            MySqlDataReader Reader;
+            try
+            {
+                conDb.Open();
+                Reader = cmdDB.ExecuteReader();
+
+                while (Reader.Read())
+                {
+                    string sName = Reader.GetString("Nombre");
+                    Lista.Items.Add(sName);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR!");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,35 +69,12 @@ namespace Lista
 
         private void Lista_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MySqlConnection con = new MySqlConnection(Connection);
-            con.Open();
-            try
-            {
-                MySqlCommand comm = con.CreateCommand();
-                comm.CommandText = "SELECT * FROM Lista";
-                MySqlDataAdapter adap = new MySqlDataAdapter(comm);
-                DataSet ds = new DataSet();
-                adap.Fill(ds);
-                dataGridView1.DataSource = ds.Tables[0].DefaultView;
-            }
-            catch(Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                if (con.State == ConnectionState.Open)
-                {
-                    con.Close();
-                }
-            }
-
+           
         }
 
         private void inicio_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
-
 }

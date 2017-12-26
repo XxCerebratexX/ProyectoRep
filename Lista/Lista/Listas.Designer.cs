@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Listas = new System.Windows.Forms.Button();
             this.Videos = new System.Windows.Forms.Button();
             this.Usuarios = new System.Windows.Forms.Button();
@@ -44,9 +45,13 @@
             this.videosLista = new System.Windows.Forms.ListBox();
             this.Lista = new System.Windows.Forms.ListBox();
             this.inicio = new System.Windows.Forms.Button();
+            this.mySqlGeometryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.resourcesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mySqlGeometryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resourcesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Listas
@@ -215,6 +220,14 @@
             this.inicio.UseVisualStyleBackColor = true;
             this.inicio.Click += new System.EventHandler(this.inicio_Click);
             // 
+            // mySqlGeometryBindingSource
+            // 
+            this.mySqlGeometryBindingSource.DataSource = typeof(MySql.Data.Types.MySqlGeometry);
+            // 
+            // resourcesBindingSource
+            // 
+            this.resourcesBindingSource.DataSource = typeof(MySql.Data.Resources);
+            // 
             // listasVentana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,6 +244,8 @@
             this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mySqlGeometryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resourcesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -252,6 +267,8 @@
         private System.Windows.Forms.Button nuevoVideo;
         private System.Windows.Forms.Button nuevaLista;
         private System.Windows.Forms.Button inicio;
+        private System.Windows.Forms.BindingSource mySqlGeometryBindingSource;
+        private System.Windows.Forms.BindingSource resourcesBindingSource;
     }
 }
 
