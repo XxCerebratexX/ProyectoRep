@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Lista
 {
-    public partial class nuevaLista : Form
+    public partial class Nuevo_Video : Form
     {
-        public nuevaLista()
+        public Nuevo_Video()
         {
             InitializeComponent();
-        }
-
-        private void nuevaLista_Load(object sender, EventArgs e)
-        {
-            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void cancelar_Click(object sender, EventArgs e)
@@ -27,14 +22,9 @@ namespace Lista
             Close();
         }
 
-        private void guardar_Click(object sender, EventArgs e)
+        private void guardarCerrar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            Close();
         }
     }
 }

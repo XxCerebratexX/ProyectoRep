@@ -75,8 +75,9 @@
             "Domingo"});
             this.checkedListBox1.Location = new System.Drawing.Point(15, 99);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 124);
+            this.checkedListBox1.Size = new System.Drawing.Size(133, 124);
             this.checkedListBox1.TabIndex = 3;
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // guardar
             // 
@@ -86,6 +87,7 @@
             this.guardar.TabIndex = 4;
             this.guardar.Text = "Guardar";
             this.guardar.UseVisualStyleBackColor = true;
+            this.guardar.Click += new System.EventHandler(this.guardar_Click);
             // 
             // cancelar
             // 
@@ -95,6 +97,7 @@
             this.cancelar.TabIndex = 5;
             this.cancelar.Text = "Cancelar";
             this.cancelar.UseVisualStyleBackColor = true;
+            this.cancelar.Click += new System.EventHandler(this.cancelar_Click);
             // 
             // nuevaLista
             // 
