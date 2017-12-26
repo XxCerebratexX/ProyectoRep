@@ -14,6 +14,9 @@ namespace Lista
     public partial class listasVentana : Form
     {
         private DBConnect con = new DBConnect();
+        public String Connection = "Server=localhost;Database=BDRep;Uid=root;Pwd=ElGuajolot3;";
+        MySqlCommand cmd;
+        private DataGridView dataGridView1 = new DataGridView();
 
         public listasVentana()
         {
@@ -44,47 +47,34 @@ namespace Lista
 
         private void Lista_SelectedIndexChanged(object sender, EventArgs e)
         {
-            con = new DBConnect();
-            List<string>[] Select()
+            MySqlConnection con = new MySqlConnection(Connection);
+            con.Open();
+            try
             {
-                string query = "SELECT * FROM tableinfo";
-
-                //Create a list to store the result
-                List<string>[] list = new List<string>[3];
-                list[0] = new List<string>();
-                list[1] = new List<string>();
-                list[2] = new List<string>();
-
-                //Open connection
-                if (con.OpenConnection() == true)
+                MySqlCommand comm = con.CreateCommand();
+                comm.CommandText = "SELECT * FROM Lista";
+                MySqlDataAdapter adap = new MySqlDataAdapter(comm);
+                DataSet ds = new DataSet();
+                adap.Fill(ds);
+                dataGridView1.DataSource = ds.Tables[0].DefaultView;
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
                 {
-                    //Create Command
-                    MySqlCommand cmd = new MySqlCommand(query, connection);
-                    //Create a data reader and Execute the command
-                    MySqlDataReader dataReader = cmd.ExecuteReader();
-
-                    //Read the data and store them in the list
-                    while (dataReader.Read())
-                    {
-                        list[0].Add(dataReader["id"] + "");
-                        list[1].Add(dataReader["name"] + "");
-                        list[2].Add(dataReader["age"] + "");
-                    }
-
-                    //close Data Reader
-                    dataReader.Close();
-
-                    //close Connection
-                    this.CloseConnection();
-
-                    //return list to be displayed
-                    return list;
-                }
-                else
-                {
-                    return list;
+                    con.Close();
                 }
             }
+
+        }
+
+        private void inicio_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

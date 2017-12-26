@@ -8,4 +8,6 @@ C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\bin\D
 C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\bin\Debug\Lista.pdb
 C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\obj\Debug\Lista.exe
 C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\obj\Debug\Lista.pdb
-C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\obj\Debug\Lista.Nuevo_Video.resources
+C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\obj\Debug\Lista.Nuevo_Video_Lista.resources
+C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\bin\Debug\MySql.Data.dll
+C:\Users\TheCerebrate\Desktop\Proyecto Reproductor\Reproductor\Lista\Lista\bin\Debug\MySql.Data.xml

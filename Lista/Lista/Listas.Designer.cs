@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Inicio = new System.Windows.Forms.Button();
             this.Listas = new System.Windows.Forms.Button();
             this.Videos = new System.Windows.Forms.Button();
             this.Usuarios = new System.Windows.Forms.Button();
@@ -44,20 +43,11 @@
             this.EliminarLista = new System.Windows.Forms.Button();
             this.videosLista = new System.Windows.Forms.ListBox();
             this.Lista = new System.Windows.Forms.ListBox();
+            this.inicio = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Inicio
-            // 
-            this.Inicio.Location = new System.Drawing.Point(0, 12);
-            this.Inicio.Name = "Inicio";
-            this.Inicio.Size = new System.Drawing.Size(75, 23);
-            this.Inicio.TabIndex = 0;
-            this.Inicio.Text = "Inicio";
-            this.Inicio.UseVisualStyleBackColor = true;
-            this.Inicio.Click += new System.EventHandler(this.button1_Click);
             // 
             // Listas
             // 
@@ -215,16 +205,26 @@
             this.Lista.TabIndex = 0;
             this.Lista.SelectedIndexChanged += new System.EventHandler(this.Lista_SelectedIndexChanged);
             // 
+            // inicio
+            // 
+            this.inicio.Location = new System.Drawing.Point(0, 12);
+            this.inicio.Name = "inicio";
+            this.inicio.Size = new System.Drawing.Size(75, 23);
+            this.inicio.TabIndex = 5;
+            this.inicio.Text = "Inicio";
+            this.inicio.UseVisualStyleBackColor = true;
+            this.inicio.Click += new System.EventHandler(this.inicio_Click);
+            // 
             // listasVentana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 480);
+            this.Controls.Add(this.inicio);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Usuarios);
             this.Controls.Add(this.Videos);
             this.Controls.Add(this.Listas);
-            this.Controls.Add(this.Inicio);
             this.Name = "listasVentana";
             this.Text = "Listas";
             this.Load += new System.EventHandler(this.listasVentana_Load);
@@ -236,8 +236,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button Inicio;
         private System.Windows.Forms.Button Listas;
         private System.Windows.Forms.Button Videos;
         private System.Windows.Forms.Button Usuarios;
@@ -253,6 +251,7 @@
         private System.Windows.Forms.ListBox Lista;
         private System.Windows.Forms.Button nuevoVideo;
         private System.Windows.Forms.Button nuevaLista;
+        private System.Windows.Forms.Button inicio;
     }
 }
 
